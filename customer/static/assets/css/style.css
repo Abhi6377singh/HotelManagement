@@ -1,0 +1,184 @@
+body{
+    font: Arial, Helvetica, sans-serif;
+    
+}
+#container {
+    width: 1550px;
+    /* border: 1px solid grey; */
+
+    margin: 0 auto;
+}
+#header {
+    height: 50px;
+    padding: 10px 0 80px;
+}
+#brand {
+    float: left;
+}
+h1 a{
+        font-size: 50px;
+        font-weight: 100;
+        color:rgb(202, 19, 183);
+        text-decoration: none;
+}
+#searchbox {
+    float: right;
+    background: linear-gradient(#E4F2B9, #B7E953);
+    width: 400px;
+    height: 50px;
+    padding: 20px 20px 0 20px;
+    margin-top: 40px;
+}
+.text {
+    float: left;
+    width: 200px;
+    padding: 5px;
+    font-size: 15px;
+    color: #e36a0c;
+    background: white;
+    background-image: href("/static/assets/images/search.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    border: 1px solid #e36a0c;
+}
+.submit {
+    float: right;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    background: #a751d6;
+    font-size: 15px;
+}
+.clear {
+    clear: both;
+}
+#menu {
+    height: 70px;
+    background: linear-gradient(#f8f594, #d5d533);
+    padding: 7px 0;
+}
+ul {
+    list-style: none;
+}
+#menu ul li {
+    float: left;
+    padding: 0 30px;
+    height: 30px;
+    border-right: 1px solid #5d12e7;
+
+}
+
+#menu ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    color:#5d12e7;
+    line-height: 30px;
+    transition: font-size 0.3s ease;
+}
+#menu ul li a:hover { 
+font-size: 20px;
+font-weight: bold;
+color: #b314db;
+}
+#introduction {
+    background:linear-gradient(#e5f2bb,#b7e952);
+    padding: 30px;
+    margin:16px 0;
+}
+#introduction h3{
+    font-size: 45px;
+    color:green;
+    font-weight: normal;
+}
+#introduction p{
+    font-size: 25px;
+    color:green;
+    text-align: justify;
+}
+.sidebar{
+    height: 500px;
+    width: 450px;
+    border: 1px solid;
+    border-color: #64ab08;
+    border-radius: 10px;
+    padding:10px 30px;
+}
+.sidebar h3{
+    color: #c414f0;
+    font-size: 30px;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #5d12e7;
+    transition: font-size 0.3s ease;
+}
+.sidebar ul li a:hover, .sidebar ul li a.active{
+    text-decoration: none;
+    color: #c414f0;
+    font-size: 23px;
+    font-weight: bold;
+
+}
+#leftsidebar{
+    float:left;
+}
+#rightsidebar{
+    float:right;
+}
+#leftsidebar ul li{
+    padding-bottom: 6px;
+    padding-left: 10px;
+    list-style-image: href("static\assets\images\rightmark.png");
+}
+#sidebar ul{
+    padding-top: 8px;
+}
+#rightsidebar ul li{
+    padding-bottom: 6px;
+    padding-left: 10px;
+    list-style-image: src("..\static\assets\images\R.png");
+}
+.footer {
+    height:60px;
+    background: linear-gradient(#f8f594,#e36a0c);
+    padding:10px 30px;
+    margin-top: 15px;
+}
+
+#buton {
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    background: #a751d6;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 780px;
+}
+#log_container{
+    float:center;
+    background-color: #da971a;
+    width: 1050px;
+    border-radius: 30px;
+   padding-bottom: 30px;
+}
+
+#center{
+    padding-top: 100px;
+}
+
+#email{
+    width: 880px;
+    height: 40px;
+    border-radius: 10%;
+    
+}
+#password{
+    width: 880px;
+    height: 50px;
+    border-radius: 10%;
+}
+h3{
+    color:#c71205;
+}

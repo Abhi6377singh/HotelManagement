@@ -21,5 +21,7 @@ from customer.views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('',index_view, name="index"),
+    path('login/', login, name="login"),
+    path('signup/', signup, name="signup"),
 ]
 

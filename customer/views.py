@@ -7,5 +7,8 @@ from django.http import HttpResponse
 def index_view(request):
     return render(request, 'index.html')
 
+def login(request):
+   return render(request, 'login.html')
 
-#testing 
+def signup(request):
+   return render(request,'signup.html')
