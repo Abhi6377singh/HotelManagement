@@ -6,3 +6,6 @@ from django.http import HttpResponse
 
 def index_view(request):
     return render(request, 'index.html')
+
+
+#testing 
