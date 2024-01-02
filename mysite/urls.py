@@ -23,7 +23,9 @@ urlpatterns = [
     path('',index_view, name="index"),
     path('login/', login, name="login"),
     path('signup/', signup, name="signup"),
-    path('about/', about_view, name="about")
-    #path('service/', service_view, name="service")
+    path('about/', about_view, name="about"),
+    path('service/', service_view, name="service"),
+    path('service/', service_view, name="service"),
+    path('contact/', contact_view, name="contact"),
 ]
 
