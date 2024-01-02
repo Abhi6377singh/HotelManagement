@@ -12,3 +12,6 @@ def login(request):
 
 def signup(request):
    return render(request,'signup.html')
+
+def about_view(request):
+   return render(request,'about.html')

@@ -18,3 +18,12 @@ class customers_h(models.Model):
 
     def __str__(self):
         return self.email
+    
+class booking(models.Model):
+    customer_id = models.ForeignKey(customers_h, on_delete=models.CASCADE)
+    room_no = models.IntegerField()
+    from_date = models.DateField()
+    till_date = models.DateField()
+
+    def __str__(self):
+        return self.room_no
