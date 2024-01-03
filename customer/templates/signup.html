@@ -55,12 +55,29 @@
     <div class="container">
       <div class="center">
           <h1>Register / Sign Up</h1>
-          <form method="POST" action="">
+          <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+			{{msg}}
               <div class="txt_field">
                   <input type="text" name="name" required>
                   <span></span>
                   <label>Name</label>
               </div>
+              <div class="txt_field">
+                <input type="text" name="address" required>
+                <span></span>
+                <label>Address</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="phone" required>
+                <span></span>
+                <label>Phone NO.</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="adharcard_no" required>
+                <span></span>
+                <label>Adharcard NO.</label>
+            </div>
               <div class="txt_field">
                   <input type="email" name="email" required>
                   <span></span>

@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="">Home</a>
                         </li>
                         <li class="nav-item @@about__active">
                             <a class="nav-link" href="about.html">About</a>
@@ -60,25 +60,17 @@
         <div class="container">
             <div class="center">
                 <h1>Register / Sign Up</h1>
-                <form method="POST" action="">
+                <form method="POST" action="{% url 'otp' %}">
                     {% csrf_token %}
-                    {{msg}}
+                    {{ msg }}
                     <div class="txt_field">
-                        <input type="email" name="email" required>
-                        <span></span>
-                        <label>Email</label>
-                    </div>
-                    <div class="txt_field">
-                        <input type="password" name="password" required>
-                        <span></span>
-                        <label>Password</label>
+                        <input type="text" placeholder="Enter OTP" name="u_otp" required="">
                     </div>
                     
                     
-                    <input name="submit" type="Submit" value="Log In">
-                    <div class="signup_link">
-                        Haven't created an Account ? <a href="signup.html">SignUp Here</a>
-                    </div>
+                    
+                    <input name="submit" type="Submit" value="Verify">
+                    
                 </form>
             </div>
         </div>
