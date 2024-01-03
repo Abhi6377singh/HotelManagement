@@ -3,67 +3,7 @@ Author: W3layouts
 Author URL: http://w3layouts.com
 -->
 {% load static %}
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Hotels a Hotels Category Responsive Web Template | Home : W3layouts</title>
-
-    <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{% static 'css/style-starter.css' %}">
-  </head>
-  <body>
-<!--w3l-header-->
-
-<header class="w3l-header-nav">
-	<!--/nav-->
-	<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">
-				<img src="{% static 'images/hotels.png' %}" alt="Your logo" style="height:35px;" /> Hotels</a>
-			<!-- if logo is image enable this   
-						<a class="navbar-brand" href="#index.html">
-							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-						</a> -->
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Home</a>
-					</li>
-					<li class="nav-item @@about__active">
-						<a class="nav-link" href="{% url 'about'%}">About</a>
-					</li>
-					<li class="nav-item @@services__active">
-						<a class="nav-link" href="{% url 'service' %}">Services</a>
-					</li>
-					<li class="nav-item @@contact__active">
-						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
-					</li>
-                    <li class="nav-item @@contact__active">
-                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
-                    </li>
-                    <li class="nav-item @@contact__active">
-                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                    </li>
-				</ul>
-				<a href="#booking" class="ml-3 book btn btn-secondary btn-style">Book Now</a>
-			</div>
-		</div>
-	</nav>
-	<!--//nav-->
-</header>
-<!-- //w3l-header -->
+{% include 'header.html' %}
  <!-- main-slider -->
  <section class="w3l-main-slider" id="home">
      <div class="companies20-content">
@@ -217,7 +157,7 @@ Author URL: http://w3layouts.com
             <div class="maghny-gd-1 col-lg-6">
                 <div class="maghny-grid">
                     <figure class="effect-lily">
-                        <img class="img-fluid" src="{% static 'assets/images/room1.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'images/room1.jpg' %}" alt="">
                         <figcaption class="w3set-hny">
                             <div>
                                 <h4 class="top-text">Luxury Hotel and Best Resort
@@ -244,7 +184,7 @@ Author URL: http://w3layouts.com
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{% static 'assets/images/room2.jpg' %}" alt="" />
+                                <img class="img-fluid" src="{% static 'images/room2.jpg' %}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Family Rooms <span> Resort</span></h4>
@@ -258,7 +198,7 @@ Author URL: http://w3layouts.com
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{% static 'assets/images/room3.jpg' %}" alt="" />
+                                <img class="img-fluid" src="{% static 'images/room3.jpg' %}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Double Rooms <span> Resort</span></h4>
@@ -272,7 +212,7 @@ Author URL: http://w3layouts.com
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{% static 'assets/images/room4.jpg' %}" alt="" />
+                                <img class="img-fluid" src="{% static 'images/room4.jpg' %}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Luxury Rooms <span> Resort</span></h4>
@@ -286,7 +226,7 @@ Author URL: http://w3layouts.com
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{% static 'assets/images/room5.jpg' %}" alt="" />
+                                <img class="img-fluid" src="{% static 'images/room5.jpg' %}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Resort Rooms <span> Resort</span></h4>
@@ -308,7 +248,7 @@ Author URL: http://w3layouts.com
             <div class="row">
                 <div class="col-lg-6 left-wthree-img text-righ">
                     <div class="position-relative">
-                        <img src="{% static 'assets/images/videobg.jpg' %}" alt="" class="img-fluid" />
+                        <img src="{% static 'images/videobg.jpg' %}" alt="" class="img-fluid" />
                         <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center position-absolute">
                             <span class="video-play-icon">
                                 <span class="fa fa-play"></span>
@@ -354,22 +294,22 @@ Author URL: http://w3layouts.com
     <div class="container py-lg-3">
         <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 logo-view">
-                <img src="{% static 'assets/images/logo1.jpg' %}" alt="company-logo" class="img-fluid" />
+                <img src="{% static 'images/logo1.jpg' %}" alt="company-logo" class="img-fluid" />
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 logo-view">
-                <img src="{% static 'assets/images/logo2.jpg' %}" alt="company-logo" class="img-fluid" />
+                <img src="{% static 'images/logo2.jpg' %}" alt="company-logo" class="img-fluid" />
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 logo-view mt-sm-0 mt-4">
-                <img src="{% static 'assets/images/logo3.jpg' %}" alt="company-logo" class="img-fluid" />
+                <img src="{% static 'images/logo3.jpg' %}" alt="company-logo" class="img-fluid" />
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 logo-view mt-md-0 mt-4">
-                <img src="{% static 'assets/images/logo4.jpg' %}" alt="company-logo" class="img-fluid" />
+                <img src="{% static 'images/logo4.jpg' %}" alt="company-logo" class="img-fluid" />
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 logo-view mt-lg-0 mt-4">
-                <img src="{% static 'assets/images/logo2.jpg' %}" alt="company-logo" class="img-fluid" />
+                <img src="{% static 'images/logo2.jpg' %}" alt="company-logo" class="img-fluid" />
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 logo-view mt-lg-0 mt-4">
-                <img src="{% static 'assets/images/logo1.jpg' %}" alt="company-logo" class="img-fluid" />
+                <img src="{% static 'images/logo1.jpg' %}" alt="company-logo" class="img-fluid" />
             </div>
         </div>
     </div>
@@ -471,9 +411,9 @@ Author URL: http://w3layouts.com
 </section>
 
 <!-- Template JavaScript -->
-<script src=" 'assets/js/jquery-3.3.1.min.js"></script>
+<script src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
 
-<script src=" 'assets/js/owl.carousel.js"></script>
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
 <!-- script for banner slider-->
 <script>
   $(document).ready(function () {
@@ -543,7 +483,7 @@ Author URL: http://w3layouts.com
   })
 </script>
 <!-- //script for owlcarousel -->
-<script src="{% static 'assets/js/jquery.magnific-popup.min.js"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
 <script>
   $(document).ready(function () {
     $('.popup-with-zoom-anim').magnificPopup({
@@ -591,7 +531,7 @@ $(function () {
 </script>
 <!-- disable body scroll which navbar is in active -->
 
-<script src="{% static 'assets/js/bootstrap.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 </body>
 

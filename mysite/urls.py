@@ -28,5 +28,6 @@ urlpatterns = [
     path('service/', service_view, name="service"),
     path('contact/', contact_view, name="contact"),
     path('otp/', otp_view, name="otp"),
+     path('logout/', logout_view, name="logout"),
 ]
 

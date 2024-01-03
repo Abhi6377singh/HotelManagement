@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from customer.models import customers_h
 from random import randint
@@ -94,3 +94,8 @@ def otp_view(request):
       return render(request, 'signup.html', {'msg': "Account Created Successfully!!!"})
    else:
       return render(request, 'otp.html', {'msg': "entered OTP is INVALID"})   
+   
+
+def logout_view(request):
+    del request.session['email']
+    return redirect('index')
