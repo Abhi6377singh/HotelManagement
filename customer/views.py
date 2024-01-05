@@ -1,9 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from customer.models import customers_h
+from customer.models import *
 from random import randint
 from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from .forms import BookingForm
+
 # Create your views here.
 
 
@@ -99,3 +103,114 @@ def otp_view(request):
 def logout_view(request):
     del request.session['email']
     return redirect('index')
+
+
+   #)
+    
+     
+
+   #if len(qs) >= room
+
+#def hotel_detail(request):
+   #(request,'services.html',{'message':'This room booked Successfully!!'})
+
+#def check_booking(start_date, end_date):
+   #qs = booking.objects.filter(
+      #from_date__lte=start_date,
+      #till_date__gte=end_date,)
+   #room_count = 10
+   #if len(qs) >= room_count:
+    #  return False
+   
+   #return True
+
+
+#def hotel_detail_view(request):
+   #if request.method == 'GET':
+        #return render(request, 'hotel_detail.html')
+   #else:
+      #checkin = request.POST.get('checkin')
+     # checkout = request.POST.get('checkout')
+      #room_no = 10
+      #if not check_booking('2024-01-04', '2024-01-06'):
+       #  messages.warning(request,'Sorry!! Room is already booked')
+        # return redirect(request.META.get('HTTP_REFERER', 'hotel_detail.html'))
+      
+      #booking.objects.create(customer_id={customers_h.id},room_no=10, from_date='2024-01-04', till_date='2024-01-06')
+      #messages.warning(request,'Successfully!!... Room is  booked')
+      #return redirect(request.META.get('HTTP_REFERER', 'index.html'))
+
+#def hotel_detail_view(request):
+   #return render(request,'hotel_detail.html')
+   #if request.method == 'post':
+     # global user_data
+      #user_data = {
+       #     'checkin_ud' :request.POST['start_date'],
+        #    'checkout_ud' : request.POST['end_date'],
+            #'room_num_ud' : request.POST['room_num'],
+         #}
+  
+      
+      
+      #form_checkin=request.POST['start_date']
+      #global user_obj
+      #user_obj=booking.objects.filter(from_date=form_checkin)
+      #return render(request,'hotel_detail.html',{'message':'Sorry!! ,This room has already booked.'})
+   #else: 
+     
+      #return render(request,'h.html')
+   
+   # views.py
+def is_room_available(room, start_date, end_date):
+    # Get existing bookings that overlap with the selected date range
+    existing_bookings = BookingDate.objects.filter(
+        room=room,
+        date__range=[start_date, end_date]
+    )
+
+    # If there are overlapping bookings, the room is not available
+    return not existing_bookings.exists()
+
+def room_list(request):
+    rooms = Room.objects.all()
+    return render(request, 'room_list.html', {'rooms': rooms})
+
+def book_room(request, room_id):
+    room = Room.objects.get(pk=room_id)
+   
+    if request.method == 'GET':
+        form = BookingForm(request.GET)
+        if form.is_valid():
+            checkin_date = form.cleaned_data['checkin_date']
+            checkout_date = form.cleaned_data['checkout_date']
+
+            if is_room_available(room, checkin_date, checkout_date):
+                  # Room is available, proceed with the booking logic
+                  # For example, you can create a new BookingDate entry for the selected range
+
+                  #payment
+
+                  # Save the new booking date
+                  booking_date = BookingDate.objects.create(room=room, date=checkin_date)
+                  room.available_dates.add(booking_date)
+                  booking_date = BookingDate.objects.create(room=room, date=checkout_date)
+                  room.available_dates.add(booking_date)
+                  # Remove the booked dates from the available_dates field
+                  booked_dates = BookingDate.objects.filter(
+                     room=room,
+                     date__range=[checkin_date, checkout_date]
+                  )
+                  #room.available_dates.remove(*booked_dates)
+                  
+                  return render(request,'book_room.html',{'msg':'Booked Successfully!!'})
+            
+            else:
+                  # Handle case where dates are not available
+                  form.add_error(None, 'Selected dates are not available.')
+    else:
+        form = BookingForm()
+
+    return render(request, 'book_room.html', {'form': form, 'room': room})
+
+
+

@@ -1,3 +1,5 @@
+
+
 {% load static %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -35,13 +37,13 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item @@about__active">
-                            <a class="nav-link" href="{% url 'about'%}">About</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item @@services__active">
-                            <a class="nav-link" href="{% url 'room_list' %}">Room List</a>
+                            <a class="nav-link" href="services.html">Services</a>
                         </li>
                         <li class="nav-item @@contact__active">
-                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item @@contact__active">
                             <a class="nav-link" href="{% url 'login' %}">Log In</a>
@@ -59,28 +61,19 @@
     <body>
         <div class="container">
             <div class="center">
-                <h1>Register / Sign Up</h1>
-                <form method="POST" action="">
+               
+                    <h2>Book {{ room.name }}</h2>
+                    <form method="get">
                     {% csrf_token %}
+                    {{ form.as_p }}
                     {{msg}}
-                    <div class="txt_field">
-                        <input type="email" name="email" required>
-                        <span></span>
-                        <label>Email</label>
-                    </div>
-                    <div class="txt_field">
-                        <input type="password" name="password" required>
-                        <span></span>
-                        <label>Password</label>
-                    </div>
-                    
-                    
-                    <input name="submit" type="Submit" value="Log In">
-                    <div class="signup_link">
-                        Haven't created an Account ? <a href="signup.html">SignUp Here</a>
-                    </div>
-                </form>
+
+                    <input name="submit" type="Submit" value="Submit">
+                    </form>
+                
             </div>
         </div>
+
+        <script src="" async defer></script>
     </body>
 </html>

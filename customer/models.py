@@ -25,5 +25,17 @@ class booking(models.Model):
     from_date = models.DateField()
     till_date = models.DateField()
 
-    def __str__(self):
+    def __int__(self):
         return self.room_no
+
+# models.py
+from django.db import models
+
+class Room(models.Model):
+    name = models.CharField(max_length=255)
+    available_dates = models.ManyToManyField('BookingDate')
+
+    
+
+class BookingDate(models.Model):
+    date = models.DateField()

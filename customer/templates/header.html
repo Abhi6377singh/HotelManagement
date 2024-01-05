@@ -13,6 +13,7 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{% static 'css/style-starter.css' %}">
+    <!--link rel="stylesheet" href="{% static 'css/style2.css' %}"-->
   </head>
   <body>
 <!--w3l-header-->
@@ -35,13 +36,13 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Home</a>
+						<a class="nav-link" href="/">Home</a>
 					</li>
 					<li class="nav-item @@about__active">
 						<a class="nav-link" href="{% url 'about'%}">About</a>
 					</li>
 					<li class="nav-item @@services__active">
-						<a class="nav-link" href="{% url 'service' %}">Services</a>
+						<a class="nav-link" href="{% url 'room_list' %}">Rooms List</a>
 					</li>
 					<li class="nav-item @@contact__active">
 						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
@@ -54,7 +55,7 @@
                 </li>
                 
                 <li class="nav-item @@contact__active" style="color:black; text-size:50px; padding-left:20px;">
-                    <a style="color:black; text-decoration:bold;" href="{% url 'logout' %}" >
+                    <a  class="ml-3 book btn btn-secondary btn-style" style="color:black; text-decoration:bold;" href="{% url 'logout' %}" >
                         <span class="fa fa-sign-out" aria-hidden="true" ></span> logout </a>
                 </li>
                     {% else %}
@@ -66,7 +67,7 @@
                     </li>
                     {% endif %}
 				</ul>
-				<a href="#booking" class="ml-3 book btn btn-secondary btn-style">Book Now</a>
+				{% comment %} <a href="#booking" class="ml-3 book btn btn-secondary btn-style">Book Now</a> {% endcomment %}
 			</div>
 		</div>
 	</nav>

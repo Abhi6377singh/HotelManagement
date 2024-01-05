@@ -1,0 +1,185 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hotels a Hotels Category Responsive Web Template | Home : W3layouts</title>
+
+    <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'css/style-starter.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style2.css' %}"> {% endcomment %}
+  </head>
+  <body>
+<!--w3l-header-->
+
+<header class="w3l-header-nav">
+	<!--/nav-->
+	<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img src="{% static 'images/hotels.png' %}" alt="Your logo" style="height:35px;" /> Hotels</a>
+			<!-- if logo is image enable this   
+						<a class="navbar-brand" href="#index.html">
+							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+						</a> -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item @@about__active">
+						<a class="nav-link" href="{% url 'about'%}">About</a>
+					</li>
+					<li class="nav-item @@services__active">
+						<a class="nav-link" href="{% url 'service' %}">Services</a>
+					</li>
+					<li class="nav-item @@contact__active">
+						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+					</li>
+                    {% if user_data %}
+                <li>
+                    <a href="" >
+                        <img src="{% static 'images/team1.jpg' %}" alt="profile pic" style="max-width: 51px; max-height: 51px; border-radius: 51px; ">
+                        <span aria-hidden="true"></span> {{user_data.full_name}} </a>
+                </li>
+                
+                <li class="nav-item @@contact__active" style="color:black; text-size:50px; padding-left:20px;">
+                    <a  class="ml-3 book btn btn-secondary btn-style" style="color:black; text-decoration:bold;" href="{% url 'logout' %}" >
+                        <span class="fa fa-sign-out" aria-hidden="true" ></span> logout </a>
+                </li>
+                    {% else %}
+                    <li class="nav-item @@contact__active">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item @@contact__active">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {% endif %}
+				</ul>
+				<a href="#booking" class="ml-3 book btn btn-secondary btn-style">Book Now</a>
+			</div>
+		</div>
+	</nav>
+	<!--//nav-->
+</header>
+<!-- //w3l-header -->
+
+
+
+  <br>
+        <div > 
+        <center><h2 style="color:blue;"><b>List of Rooms</b></h2></center>
+        </div> 
+        {{msg}}
+        {% for room in rooms %}
+        {% comment %} <h2>{{ room.name }}</h2>
+        <a href="{% url 'book_room' room.id %}">Book this room</a> {% endcomment %}
+        <div><br><br></div>
+        
+        <div class="best-rooms py-5">
+            <div class="container py-lg-5 py-sm-4">
+                <h3 class="title-big text-center">{{ room.name }}</h3>
+                <div class="ban-content-inf row py-lg-3">
+                    <div class="maghny-gd-1 col-lg-6">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily">
+                                <img class="img-fluid" src="{% static 'images/room1.jpg' %}" alt="">
+                                <figcaption class="w3set-hny">
+                                    <div>
+                                        <h4 class="top-text">Luxury Hotel and Best Resort
+                                            <span>Peaceful Place to stay</span></h4>
+                                        <p>From 20$ </p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div class="room-info">
+                                <h3 class="room-title"><a href="room-single.html">{{ room.name }}</a></h3>
+                                <ul class="mb-3">
+                                    <li><span class="fa fa-users"></span> 2 Guests</li>
+                                    <li><span class="fa fa-bed"></span> Double bed</li>
+                                    <li><span class="fa fa-bed"></span> 15sqft</li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
+                                    tempora voluptates?</p>
+                                <a href="{% url 'book_room' room.id %}" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+                        <div class="row">
+                            <div class="maghny-gd-1 col-6">
+                                <div class="maghny-grid">
+                                    <figure class="effect-lily border-radius">
+                                        <img class="img-fluid" src="{% static 'images/room2.jpg' %}" alt="" />
+                                        <figcaption>
+                                            <div>
+                                                <h4>Family Rooms <span> Resort</span></h4>
+                                                <p>From 20$ </p>
+                                            </div>
+        
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="maghny-gd-1 col-6">
+                                <div class="maghny-grid">
+                                    <figure class="effect-lily border-radius">
+                                        <img class="img-fluid" src="{% static 'images/room3.jpg' %}" alt="" />
+                                        <figcaption>
+                                            <div>
+                                                <h4>Double Rooms <span> Resort</span></h4>
+                                                <p>From 20$ </p>
+                                            </div>
+        
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="maghny-gd-1 col-6 mt-4">
+                                <div class="maghny-grid">
+                                    <figure class="effect-lily border-radius">
+                                        <img class="img-fluid" src="{% static 'images/room4.jpg' %}" alt="" />
+                                        <figcaption>
+                                            <div>
+                                                <h4>Luxury Rooms <span> Resort</span></h4>
+                                                <p>From 20$ </p>
+                                            </div>
+        
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="maghny-gd-1 col-6 mt-4">
+                                <div class="maghny-grid">
+                                    <figure class="effect-lily border-radius">
+                                        <img class="img-fluid" src="{% static 'images/room5.jpg' %}" alt="" />
+                                        <figcaption>
+                                            <div>
+                                                <h4>Resort Rooms <span> Resort</span></h4>
+                                                <p>From 20$ </p>
+                                            </div>
+        
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <script src="" async defer></script>
+    </body>
+</html>

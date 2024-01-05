@@ -28,6 +28,9 @@ urlpatterns = [
     path('service/', service_view, name="service"),
     path('contact/', contact_view, name="contact"),
     path('otp/', otp_view, name="otp"),
-     path('logout/', logout_view, name="logout"),
+    path('logout/', logout_view, name="logout"),
+    # path('hotel_detail/', hotel_detail_view, name="hotel_detail"),
+    path('room_list/', room_list, name="room_list"),
+    path('book_room/<int:room_id>', book_room, name="book_room"),
 ]
 
