@@ -35,14 +35,23 @@ def login(request):
 
 
 def about_view(request):
-   return render(request,'about.html')
+   
+   if 'email' in request.session:
+      user_obj = customers_h.objects.get(email=request.session['email'])
+      return render(request,'about.html', {'user_data':user_obj})
+   else:
+       return render(request, 'index.html', {'msg':'----------------Please login first !!--------------'})
 
 def service_view(request):
    return render(request,'services.html')
 
 def contact_view(request):
    
-   return render(request,'contact.html')
+   if 'email' in request.session:
+      user_obj = customers_h.objects.get(email=request.session['email'])
+      return render(request,'contact.html', {'user_data':user_obj})
+   else:
+       return render(request, 'index.html', {'msg':'----------------Please login first !!--------------'})
 
 def signup(request):
    global c_otp
@@ -172,8 +181,12 @@ def is_room_available(room, start_date, end_date):
     return not existing_bookings.exists()
 
 def room_list(request):
-    rooms = Room.objects.all()
-    return render(request, 'room_list.html', {'rooms': rooms})
+   if 'email' in request.session:
+      user_obj = customers_h.objects.get(email=request.session['email'])
+      rooms = Room.objects.all()
+      return render(request, 'room_list.html', {'rooms': rooms,'user_data':user_obj})
+   else:
+       return render(request, 'index.html', {'msg':'----------------Please login first !!--------------'})
 
 def book_room(request, room_id):
     room = Room.objects.get(pk=room_id)
