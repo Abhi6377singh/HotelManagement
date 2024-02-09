@@ -134,3 +134,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'yashkgr2003@gmail.com'
 EMAIL_HOST_PASSWORD = 'xedsemyrbjttmtnw'
+
+RAZOR_KEY_ID = 'rzp_test_efcmGhhofwmZHR'
+RAZOR_KEY_SECRET = 'FNMx4kzqgYwlq9AoDGPnbwAL'
