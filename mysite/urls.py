@@ -33,6 +33,6 @@ urlpatterns = [
     path('room_list/', room_list, name="room_list"),
     path('book_room/<int:room_id>', book_room, name="book_room"),
     
-    path('paymenthandler/', paymenthandler, name='paymenthandler'),
+    path('book_room/<int:room_id>/paymenthandler/', paymenthandler, name='paymenthandler'),
 ]
 

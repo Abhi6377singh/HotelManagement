@@ -172,7 +172,7 @@ def logout_view(request):
      
       #return render(request,'h.html')
    
-   # views.py
+   
 def is_room_available(room, start_date, end_date):
     # Get existing bookings that overlap with the selected date range
     existing_bookings = BookingDate.objects.filter(
@@ -249,6 +249,10 @@ def book_room(request, room_id):
 
 
 from django.shortcuts import render
+
+
+
+
 
 
 # we need to csrf_exempt this url as
